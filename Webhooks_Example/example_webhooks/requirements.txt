@@ -1,0 +1,7 @@
+sapiopylib==2023.5.19.139
+urllib3~=1.26.15
+waitress~=2.1.2
+pandas~=1.5.2
+openpyxl~=3.1.2
+et-xmlfile~=1.1.0
+pytz~=2022.7

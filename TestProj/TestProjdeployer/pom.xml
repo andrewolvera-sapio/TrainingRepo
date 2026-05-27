@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>TestProjdeployer</artifactId>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>TestProj</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <name>TestProj - Deployer</name>
+
+    <properties>
+        <!-- Specifies your deployment dirs. Default all to somewhere in target directory of current module.
+        <deployer.applib.dir></deployer.applib.dir>
+        <deployer.plugins.dir></deployer.plugins.dir>
+        <deployer.nongwtwar.dir></deployer.nongwtwar.dir>
+        <deployer.clientplugins.dir></deployer.clientplugins.dir>
+        <deployer.lib.dir></deployer.lib.dir>
+        <deployer.resource.dir></deployer.resource.dir>
+        <extractor.dir></extractor.dir>
+        -->
+        <!-- Do you want to make Sapio Extractor when you run sapio-copy-dependencies goal? -->
+        <make.extractor>true</make.extractor>
+        <!-- 99% of the time has.special.resources should be false. Talk to Yechen if you want to turn it on.
+                 Current Exceptions: Charting and Statistics (and any dependent projects such as Bioanalysis)
+        -->
+        <has.special.resources>false</has.special.resources>
+        <!-- If we were to generate extractors, what is the extractor filename? -->
+        <extractor.file.name>TestProj_extractor.jar</extractor.file.name>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>TestProjserverplugin</artifactId>
+            <version>${project.version}</version>
+            <type>plugin</type>
+        </dependency>
+
+        <!-- By default, we do not deploy anyhting in sapio foundations itself.
+        You may add sapio foundations dependencies to deploy them in this project too!
+
+        For example, to deploy ALL NGS plugins and wars, add:
+         <dependency>
+            <groupId>com.velox.internalproducts</groupId>
+            <artifactId>foundationsGWTdeployer</artifactId>
+            <version>${sapiofoundations.version}</version>
+            <type>pom</type>
+        </dependency>
+        -->
+    </dependencies>
+</project>

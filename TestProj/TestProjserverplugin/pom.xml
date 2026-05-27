@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>TestProjserverplugin</artifactId>
+
+    <!-- Specifies the Server-Side Super Dependencies. All server-side plugins/libs/applibs
+		must be built against one of them to preserve integrity of applib -->
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>TestProj</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!-- Available Packaging (Select One):
+	plugin: server-side plugin
+	applib: server-side applib
+	-->
+    <packaging>plugin</packaging>
+
+    <name>TestProj - Server Plugin</name>
+
+    <properties>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.velox.internalproducts</groupId>
+            <artifactId>sapio-commons</artifactId>
+            <type>applib</type>
+        </dependency>
+        <!-- Add your dependencies here. Examples from accessionservicesharedlib:
+			If a dependency you have is an "applib", you must specify "type" as applib.
+			If a dependency you have is a "plugin", you must specify "type" as "plugin".
+			NOTE: we cannot transitively resolve anything published by the old ant build
+			script. A jar type do not need to have its type specified as it's implicit. -->
+    </dependencies>
+
+    <!-- Let's not worry about SCM for now... -->
+
+</project>

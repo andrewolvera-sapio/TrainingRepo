@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>TestProj</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <parent>
+    <groupId>com.sapiosciences.maven.poms</groupId>
+    <artifactId>sapiomaster</artifactId>
+    <version>6.3.3-Sapio</version>
+  </parent>
+  <properties>
+    <!-- What Sapio Foundations version are we referring to? -->
+    <sapiofoundations.version>17.8.0-LIMS20.5</sapiofoundations.version>
+    <!-- Java Compiler Versions -->
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <!-- Forces a build source code encoding to handle international characters. -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Project Level Feature ID setting for license check. If non-blank, this feature ID will be applied to plugin jars.-->
+    <plugin.feature.id/>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <!--
+            * IMPORTANT *
+            The dependency management section specifies shared module dependencies across all modules
+            It is very important to note to prevent jar hell in applib, all external libraries, should they
+            be referred by another project, must share the same version as the one we use in this project.
+
+            For example, almost all projects requires at least one module (e.g. sapio-commons) from
+            sapio foundations, and almost everyone uses sapio foundations in tenants.
+
+            So we will declare a sapiofoundation "import" scope dependency to bring in all dependency
+            management of external libraries managed by sapio foundations here.
+
+            Should you bring in other licensed modules in the tenant you are deploying to, their parent
+            projects should also be imported in dependency management.
+            -->
+      <dependency>
+        <groupId>com.velox.internalproducts</groupId>
+        <artifactId>sapiofoundations</artifactId>
+        <version>${sapiofoundations.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- This is an example of referring to a module in sapio foundations.
+            If an artifact is published as applib or plugin, then its type must be explicitly declared.
+            -->
+      <dependency>
+        <groupId>com.velox.internalproducts</groupId>
+        <artifactId>sapio-commons</artifactId>
+        <version>${sapiofoundations.version}</version>
+        <type>applib</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <modules>
+    <module>TestProjserverplugin</module>
+    <module>TestProjdeployer</module>
+  </modules>
+</project>
