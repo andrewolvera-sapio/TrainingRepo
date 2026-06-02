@@ -13,8 +13,6 @@ from sapiopycommons.webhook.webhook_handlers import CommonsWebhookHandler
 from sapiopylib.rest.WebhookService import SapioWebhookResult
 from sapiopylib.rest.pojo.datatype.FieldDefinition import VeloxIntegerFieldDefinition
 from sapiopylib.rest.pojo.DataRecord import DataRecord
-from sapiopylib.rest.ELNService import ElnExperiment
-from sapiopylib.rest.pojo.eln.ExperimentEntry import ExperimentTableEntry
 
 class NotebookAddRecords(CommonsWebhookHandler):
 
