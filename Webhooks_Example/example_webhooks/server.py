@@ -7,6 +7,12 @@ from sapiopylib.rest.pojo.webhook.WebhookResult import SapioWebhookResult
 from waitress import serve
 
 from sapio.webhook.button.hello_world_button import HelloWorldButton
+from sapio.webhook.button.add_roles_button import AddRolesButton
+from sapio.webhook.button.change_captain_button import ChangeCaptainButton
+from sapio.webhook.button.sapio_word_button import SapioWordButton
+from sapio.webhook.list_fill.contact_selection import SprintContactSelection
+from sapio.webhook.on_save.sprint_on_save import SprintOnSave
+from sapio.webhook.eln.notebook_status_change import NotebookStatusChange
 
 urllib3.disable_warnings()
 
@@ -23,6 +29,24 @@ config.register('/ping', Ping)
 
 # Hello world webhook
 config.register('/hello_world_button', HelloWorldButton)
+
+# Add roles webhook
+config.register('/add_roles_button', AddRolesButton)
+
+# Change captain webhook
+config.register('/change_captain_button', ChangeCaptainButton)
+
+# Sapio word webhook
+config.register('/sapio_word_button', SapioWordButton)
+
+# Sprint contact selection webhook
+config.register('/sprint_contact_selection', SprintContactSelection)
+
+# Sprint on save webhook
+config.register('/sprint_on_save', SprintOnSave)
+
+# Notebook status change webhook
+config.register('/notebook_status_change', NotebookStatusChange)
 
 app = WebhookServerFactory.configure_flask_app(app=None, config=config)
 

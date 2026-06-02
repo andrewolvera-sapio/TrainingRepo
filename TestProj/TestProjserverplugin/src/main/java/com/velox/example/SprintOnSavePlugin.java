@@ -76,6 +76,9 @@ public class SprintOnSavePlugin extends ExemplarVeloxServerPlugin<OnSaveContext>
 
         // Assignment save logic
         if (assignmentRecord != null) {
+            // Disregard - record model demo
+//            AssignmentModel assignmentModel = instMan.addExistingRecordOfType(assignmentRecord, AssignmentModel.class);
+//            recMan.storeAndCommit("Updated");
             if (!(assignmentRecord.getLastSavedStringVal("Developer").equals(assignmentRecord.getStringVal("Developer", user)))) {
                 boolean isEmptyInput = assignmentRecord.getStringVal("Developer", user).isEmpty();
                 List<DataRecord> parentList = assignmentRecord.getParentList(user);
@@ -89,8 +92,10 @@ public class SprintOnSavePlugin extends ExemplarVeloxServerPlugin<OnSaveContext>
                 List<DataRecord> allSprintDevs = sprintRecord.getChildListOfType("Developer", user);
 
                 if (isEmptyInput) {
-                    assignmentDevNameMap.put(assignmentRecord.getLastSavedStringVal("Developer"), 1);} else {
-                    assignmentDevNameMap.put((String) assignmentRecord.getDataField("Developer", user), 1);}
+                    assignmentDevNameMap.put(assignmentRecord.getLastSavedStringVal("Developer"), 1);}
+                else {
+                    assignmentDevNameMap.put((String) assignmentRecord.getDataField("Developer", user), 1);
+                }
 
                 for (DataRecord record : allAssignmentRecords) {
                     String name = (String) record.getLastSavedStringVal("Developer");

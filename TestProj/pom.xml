@@ -7,11 +7,11 @@
   <parent>
     <groupId>com.sapiosciences.maven.poms</groupId>
     <artifactId>sapiomaster</artifactId>
-    <version>6.3.3-Sapio</version>
+    <version>6.9.1-Sapio</version>
   </parent>
   <properties>
     <!-- What Sapio Foundations version are we referring to? -->
-    <sapiofoundations.version>17.8.0-LIMS20.5</sapiofoundations.version>
+    <sapiofoundations.version>36.0.7.25.9.1</sapiofoundations.version>
     <!-- Java Compiler Versions -->
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>

@@ -13,6 +13,7 @@ import com.velox.api.exception.recoverability.serverexception.UnrecoverableServe
 import com.velox.api.plugin.PluginResult;
 import com.velox.api.plugin.invocation.ActionDataFieldPlugin;
 import com.velox.api.plugin.invocation.context.ActionDataFieldContext;
+import com.velox.api.util.ServerException;
 import com.velox.sapio.commons.exemplar.plugin.veloxplugin.ExemplarVeloxServerPlugin;
 
 import java.rmi.RemoteException;
@@ -67,7 +68,7 @@ public class ChangeCaptainPlugin extends ExemplarVeloxServerPlugin<ActionDataFie
         return true;
     }
 
-    public void wasPreviousCaptain (DataRecord currSprint) throws RemoteException, NotFound, IoError, UnrecoverableServerException {
+    public void wasPreviousCaptain (DataRecord currSprint) throws RemoteException, NotFound, IoError, ServerException {
         List<DataRecord> developers = currSprint.getChildListOfType("Developer", user);
         String oldCaptain = (String) currSprint.getDataField("Captain", user);
 
