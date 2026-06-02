@@ -13,6 +13,7 @@ from sapio.webhook.button.sapio_word_button import SapioWordButton
 from sapio.webhook.list_fill.contact_selection import SprintContactSelection
 from sapio.webhook.on_save.sprint_on_save import SprintOnSave
 from sapio.webhook.eln.notebook_status_change import NotebookStatusChange
+from sapio.webhook.eln.notebook_add_records import NotebookAddRecords
 
 urllib3.disable_warnings()
 
@@ -47,6 +48,8 @@ config.register('/sprint_on_save', SprintOnSave)
 
 # Notebook status change webhook
 config.register('/notebook_status_change', NotebookStatusChange)
+
+config.register('/notebook_add_records', NotebookAddRecords)
 
 app = WebhookServerFactory.configure_flask_app(app=None, config=config)
 

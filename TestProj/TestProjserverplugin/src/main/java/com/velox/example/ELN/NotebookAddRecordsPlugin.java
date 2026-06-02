@@ -161,15 +161,4 @@ public class NotebookAddRecordsPlugin extends ExemplarVeloxServerPlugin<Notebook
         exp.setExperimentEntry(tableEntry, user);
         experimentManager.storeNotebookExperiment(exp, clientCallback.getClientCallbackRMI(), user);
     }
-
-    public List<DataRecord> mapListToDRList(List<Map<String, Object>> mapList) {
-        List<DataRecord> mapToList = new ArrayList<>();
-        for (Map<String, Object> map : mapList) {
-            for (Object value : map.values()) {
-                mapToList.add((DataRecord) value); // Explicitly cast Object to DataRecord
-            }
-        }
-        return mapToList;
-    }
-
 }
