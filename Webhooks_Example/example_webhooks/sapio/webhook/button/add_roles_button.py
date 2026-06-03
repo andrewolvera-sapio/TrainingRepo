@@ -1,5 +1,4 @@
 from sapiopycommons.callbacks.callback_util import BlankResultHandling
-from sapiopycommons.general.directive_util import TableDirective
 from sapiopycommons.general.exceptions import SapioUserCancelledException
 from sapiopycommons.webhook.webhook_handlers import CommonsWebhookHandler
 from sapiopylib.rest.pojo.datatype.FieldDefinition import VeloxIntegerFieldDefinition
