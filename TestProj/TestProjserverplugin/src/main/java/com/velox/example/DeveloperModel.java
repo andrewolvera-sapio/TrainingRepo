@@ -4,7 +4,7 @@
  * This software is the property of Sapio Sciences.
  * ====================================================================
  */
-package example;
+package com.velox.example;
 
 import com.velox.sapio.commons.exemplar.recordmodel.annotation.ExemplarDataTypeModel;
 import com.velox.sapio.commons.exemplar.recordmodel.record.AbstractRecordModelWrapper;
