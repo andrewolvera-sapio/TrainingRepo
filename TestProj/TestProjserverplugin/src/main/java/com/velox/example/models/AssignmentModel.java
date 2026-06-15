@@ -4,31 +4,22 @@
  * This software is the property of Sapio Sciences.
  * ====================================================================
  */
-package com.velox.example;
+package com.velox.example.models;
 
 import com.velox.sapio.commons.exemplar.recordmodel.annotation.ExemplarDataTypeModel;
 import com.velox.sapio.commons.exemplar.recordmodel.record.AbstractRecordModelWrapper;
 import com.velox.sapio.commons.exemplar.recordmodel.record.RecordModel;
-import com.velox.util.time.DateRange;
+
 /**
- * Automatically generated class for: Developer
+ * Automatically generated class for: Assignment
  */
-@ExemplarDataTypeModel(dataTypeName="Developer")
-public class DeveloperModel extends AbstractRecordModelWrapper {
+@ExemplarDataTypeModel(dataTypeName="Assignment")
+public class AssignmentModel extends AbstractRecordModelWrapper {
 
 	/**
 	 * The name of the Data Type this class represents
 	 */
-	public static final String DATA_TYPE_NAME = "Developer";
-
-	/**
-	 * <b>Data Field Name</b>: Active<br/>
-	 * <br/>
-	 * <b>Display Name</b>: Active<br/>
-	 * <br/>
-	 * <b>Description</b>: No Description
-	 */
-	public static final String ACTIVE = "Active";
+	public static final String DATA_TYPE_NAME = "Assignment";
 
 	/**
 	 * <b>Data Field Name</b>: CreatedBy<br/>
@@ -58,13 +49,13 @@ public class DeveloperModel extends AbstractRecordModelWrapper {
 	public static final String DATE_CREATED = "DateCreated";
 
 	/**
-	 * <b>Data Field Name</b>: Name<br/>
+	 * <b>Data Field Name</b>: Developer<br/>
 	 * <br/>
-	 * <b>Display Name</b>: Name<br/>
+	 * <b>Display Name</b>: Developer<br/>
 	 * <br/>
 	 * <b>Description</b>: No Description
 	 */
-	public static final String NAME = "Name";
+	public static final String DEVELOPER = "Developer";
 
 	/**
 	 * <b>Data Field Name</b>: RecordId<br/>
@@ -74,15 +65,6 @@ public class DeveloperModel extends AbstractRecordModelWrapper {
 	 * <b>Description</b>: The system-wide unique ID of this data record
 	 */
 	public static final String RECORD_ID = "RecordId";
-
-	/**
-	 * <b>Data Field Name</b>: Role<br/>
-	 * <br/>
-	 * <b>Display Name</b>: Role<br/>
-	 * <br/>
-	 * <b>Description</b>: No Description
-	 */
-	public static final String ROLE = "Role";
 
 	/**
 	 * <b>Data Field Name</b>: VeloxLastModifiedBy<br/>
@@ -102,38 +84,8 @@ public class DeveloperModel extends AbstractRecordModelWrapper {
 	 */
 	public static final String VELOX_LAST_MODIFIED_DATE = "VeloxLastModifiedDate";
 
-	protected DeveloperModel(RecordModel backingModel) {
+	protected AssignmentModel(RecordModel backingModel) {
 		super(backingModel);
-	}
-	
-	/**
-	 * Retrieves the value stored on the {@link #ACTIVE} field via {@link #getField(String)}<br/>
-	 * <br/>
-	 * <b>Data Field Name</b>: Active<br/>
-	 * <br/>
-	 * <b>Display Name</b>: Active<br/>
-	 * <br/>
-	 * <b>Description</b>: No Description
-	 * 
-	 * @return the value stored on the "Active" field
-	 */
-	public Boolean getActive() {
-		return getField(ACTIVE);
-	}
-	
-	/**
-	 * Sets the value stored on the {@link #ACTIVE} field via {@link #setField(String, Object)}<br/>
-	 * <br/>
-	 * <b>Data Field Name</b>: Active<br/>
-	 * <br/>
-	 * <b>Display Name</b>: Active<br/>
-	 * <br/>
-	 * <b>Description</b>: No Description
-	 * 
-	 * @param value The value to set on the "Active" field
-	 */
-	public void setActive(Boolean value) {
-		setField(ACTIVE, value);
 	}
 	
 	/**
@@ -182,63 +134,33 @@ public class DeveloperModel extends AbstractRecordModelWrapper {
 	}
 	
 	/**
-	 * Retrieves the value stored on the {@link #NAME} field via {@link #getField(String)}<br/>
+	 * Retrieves the value stored on the {@link #DEVELOPER} field via {@link #getField(String)}<br/>
 	 * <br/>
-	 * <b>Data Field Name</b>: Name<br/>
+	 * <b>Data Field Name</b>: Developer<br/>
 	 * <br/>
-	 * <b>Display Name</b>: Name<br/>
+	 * <b>Display Name</b>: Developer<br/>
 	 * <br/>
 	 * <b>Description</b>: No Description
 	 * 
-	 * @return the value stored on the "Name" field
+	 * @return the value stored on the "Developer" field
 	 */
-	public String getName() {
-		return getField(NAME);
+	public String getDeveloper() {
+		return getField(DEVELOPER);
 	}
 	
 	/**
-	 * Sets the value stored on the {@link #NAME} field via {@link #setField(String, Object)}<br/>
+	 * Sets the value stored on the {@link #DEVELOPER} field via {@link #setField(String, Object)}<br/>
 	 * <br/>
-	 * <b>Data Field Name</b>: Name<br/>
+	 * <b>Data Field Name</b>: Developer<br/>
 	 * <br/>
-	 * <b>Display Name</b>: Name<br/>
-	 * <br/>
-	 * <b>Description</b>: No Description
-	 * 
-	 * @param value The value to set on the "Name" field
-	 */
-	public void setName(String value) {
-		setField(NAME, value);
-	}
-	
-	/**
-	 * Retrieves the value stored on the {@link #ROLE} field via {@link #getField(String)}<br/>
-	 * <br/>
-	 * <b>Data Field Name</b>: Role<br/>
-	 * <br/>
-	 * <b>Display Name</b>: Role<br/>
+	 * <b>Display Name</b>: Developer<br/>
 	 * <br/>
 	 * <b>Description</b>: No Description
 	 * 
-	 * @return the value stored on the "Role" field
+	 * @param value The value to set on the "Developer" field
 	 */
-	public String getRole() {
-		return getField(ROLE);
-	}
-	
-	/**
-	 * Sets the value stored on the {@link #ROLE} field via {@link #setField(String, Object)}<br/>
-	 * <br/>
-	 * <b>Data Field Name</b>: Role<br/>
-	 * <br/>
-	 * <b>Display Name</b>: Role<br/>
-	 * <br/>
-	 * <b>Description</b>: No Description
-	 * 
-	 * @param value The value to set on the "Role" field
-	 */
-	public void setRole(String value) {
-		setField(ROLE, value);
+	public void setDeveloper(String value) {
+		setField(DEVELOPER, value);
 	}
 	
 	/**
